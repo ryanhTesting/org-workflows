@@ -1,5 +1,5 @@
 name: testing-memory
-run-name: ${{ github.actor }} is running a workflow in ${{github.action_repository}},caused by ${{github.event_name}}
+run-name: ${{ github.actor }} is running a workflow in ${{github.repository}},caused by ${{github.event_name}}
 on:
   push:
     branches:
