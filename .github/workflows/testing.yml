@@ -1,0 +1,17 @@
+name: testing-memory
+run-name: ${{ github.actor }} is running a workflow in ${{github.action_repository}},caused by ${{github.event_name}}
+on:
+  push:
+    branches:
+      - "main"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checking out repo
+        uses: actions/checkout@v3
+  
+    
+
