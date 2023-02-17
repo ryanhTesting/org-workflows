@@ -22,7 +22,7 @@ jobs:
           echo "page_data=$(cat ${{ env.page }})" >> $GITHUB_ENV
       - name: outputting page and title
         run: |
-          echo ${{env.page}}
+          echo ${{env.page_name}}
           echo ${{env.page_data}}
       - name: Send custom JSON data to Slack workflow
         id: slack
