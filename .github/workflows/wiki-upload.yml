@@ -13,7 +13,8 @@ jobs:
           repository: ${{github.repository}}.wiki 
       - name: echo pages
         env:
-          PAGE_NAME: ${{ toJson(github.event.pages[0].page_name) }}.md
+          PAGE_NAME: ${{ toJson(github.event.pages[0].page_name) }}
         run: |
-          cat $PAGE_NAME
+          echo "page=$PAGE_NAME.md" >> $GITHUB_ENV
+          echo ${{env.page}}
 
