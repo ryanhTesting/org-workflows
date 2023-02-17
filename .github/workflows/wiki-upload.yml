@@ -16,6 +16,18 @@ jobs:
           PAGE_NAME: ${{ toJson(github.event.pages[0].page_name) }}
         run: |
           echo "page=$PAGE_NAME.md" >> $GITHUB_ENV
-      - name: outputting page
-        run: cat ${{ env.page }}
+      
+      #- name: outputting page
+      #  run: cat ${{ env.page }}
+      - name: Send custom JSON data to Slack workflow
+        id: slack
+        uses: slackapi/slack-github-action@v1.22.0
+        with:
+          # This data can be any valid JSON from a previous step in the GitHub Action
+          payload: |
+            {
+              "EOD": ${{toJSON(env.page)}},
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{secrets.webhook_url}}
 
