@@ -16,6 +16,6 @@ jobs:
           PAGE_NAME: ${{ toJson(github.event.pages[0].page_name) }}
         run: |
           echo "page=$PAGE_NAME.md" >> $GITHUB_ENV
-      - name: testing env
-        run: echo ${{ env.page }}
+      - name: outputting page
+        run: cat ${{ env.page }}
 
