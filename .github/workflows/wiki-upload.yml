@@ -16,6 +16,7 @@ jobs:
           PAGE_NAME: ${{ toJson(github.event.pages[0].page_name) }}
         run: |
           echo "page=$PAGE_NAME.md" >> $GITHUB_ENV
+          echo "page_name=$PAGE_NAME" >> $GITHUB_ENV
       - name: outputting page
         run: |
           echo "page_data=$(cat ${{ env.page }})" >> $GITHUB_ENV
@@ -30,8 +31,8 @@ jobs:
           # This data can be any valid JSON from a previous step in the GitHub Action
           payload: |
             {
-              "Title": ${{toJSON(env.page)}}
-              "EOD": ${{toJSON(env.page_data)}},
+              "Title": "${{toJSON(env.page_name)}}"
+              "EOD": "${{toJSON(env.page_data)}}",
             }
         env:
           SLACK_WEBHOOK_URL: ${{secrets.webhook_url}}
