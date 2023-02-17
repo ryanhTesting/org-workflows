@@ -12,6 +12,8 @@ jobs:
         with: 
           repository: ${{github.repository}}.wiki 
       - name: echo pages
-        run: | 
-          echo ${{github}}
-  
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: |
+          echo "$GITHUB_CONTEXT"
+
