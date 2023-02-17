@@ -1,1 +1,17 @@
+name: grabbing wiki data on change
 
+on:
+  gollum
+
+jobs:
+  grab-wiki-data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout wiki
+        uses: actions/checkout@v3
+        with: 
+          repository: ${{github.repository}}.wiki 
+      - name: echo pages
+        run: | 
+          echo ${{github}}
+  
