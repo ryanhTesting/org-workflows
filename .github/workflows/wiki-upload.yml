@@ -31,8 +31,8 @@ jobs:
           # This data can be any valid JSON from a previous step in the GitHub Action
           payload: |
             {
-              "Title": ${{ toJson(github.event.pages[0].page_name) }},
-              "EOD": ${{ toJson(github.event.pages[0].page_name) }}
+              "Title": ${{ toJson(github.event.pages[0].page_name) }} ,
+              "EOD": ${{ toJson(env.page_data) }}
             }
         env:
           SLACK_WEBHOOK_URL: ${{secrets.webhook_url}}
