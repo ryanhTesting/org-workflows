@@ -19,7 +19,9 @@ jobs:
           echo "page_name=$PAGE_NAME" >> $GITHUB_ENV
       - name: outputting page
         run: |
-          echo "page_data=$(cat ${{ env.page }})" >> $GITHUB_ENV
+          echo 'page_data<<EOF' >> $GITHUB_ENV
+          cat ${{ env.page }}  >> $GITHUB_ENV
+          echo 'EOF' >> $GITHUB_ENV
       - name: outputting page and title
         run: |
           echo ${{env.page_name}}
