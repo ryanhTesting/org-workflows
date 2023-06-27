@@ -1,0 +1,19 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Test Poetry install
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  install:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: install poetry with curl
+        run: curl -sSL https://install.python-poetry.org | python3 -
