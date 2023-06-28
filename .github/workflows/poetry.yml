@@ -12,6 +12,8 @@ on:
 jobs:
   install:
     runs-on: self-hosted
+    container:
+      image: docker:23.0
     steps:
       - uses: actions/checkout@v3
 
