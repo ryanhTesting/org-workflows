@@ -15,7 +15,5 @@ jobs:
     container:
       image: docker:23.0
     steps:
-      - uses: actions/checkout@v3
-
       - name: install poetry with curl
         run: docker ps
