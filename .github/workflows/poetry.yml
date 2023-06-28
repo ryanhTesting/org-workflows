@@ -12,8 +12,6 @@ on:
 jobs:
   install:
     runs-on: self-hosted
-    container:
-      image: docker:23.0
     steps:
       - name: install poetry with curl
         run: docker ps
