@@ -1,5 +1,5 @@
 FROM ubuntu:latest
-
+ARG DEBIAN_FRONTEND=noninteractive
 
 RUN apt update && apt install software-properties-common -y
 RUN add-apt-repository ppa:deadsnakes/ppa
