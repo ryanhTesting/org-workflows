@@ -13,5 +13,5 @@ jobs:
   install:
     runs-on: self-hosted
     steps:
-      - name: install poetry with curl
-        run: docker ps
+      - name: build alpine python image with poetry install
+        run: docker build .
