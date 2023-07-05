@@ -8,7 +8,8 @@ RUN apk add --no-cache musl-dev gcc libseccomp-dev libseccomp-static
 FROM runc as python
 # Updates the package index and installs python3 in the alpine container
 RUN apk --update add python3
-RUN curl -h
-RUN curl -v google.com
-RUN curl -v https://install.python-poetry.org
+
+FROM python as curl
+RUN cat /etc/resolv.conf
+
 # RUN curl -sSL https://install.python-poetry.org | python3 -
