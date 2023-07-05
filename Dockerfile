@@ -1,6 +1,6 @@
 
 FROM alpine:3.18 as git
-RUN apk add --no-cache git curl slirp4netns php bind-tools nslookup
+RUN apk add --no-cache git curl slirp4netns php bind-tools
 
 FROM git as runc
 RUN apk add --no-cache musl-dev gcc libseccomp-dev libseccomp-static
