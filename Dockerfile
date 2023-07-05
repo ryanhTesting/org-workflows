@@ -3,7 +3,7 @@ FROM alpine:3.12 as git
 RUN apk add --no-cache git curl bind-tools
 
 FROM git as runc
-RUN apk add --no-cache musl-dev gcc libseccomp-dev libseccomp-static
+RUN apk add --no-cache musl-dev gcc libseccomp-dev
 
 FROM runc as python
 # Updates the package index and installs python3 in the alpine container
