@@ -10,6 +10,5 @@ FROM runc as python
 RUN apk --update add python3
 
 FROM python as curl
-RUN cat /home/runner/.config/docker/daemon.json
 RUN curl https://install.python-poetry.org
 # RUN curl -sSL https://install.python-poetry.org | python3 -
