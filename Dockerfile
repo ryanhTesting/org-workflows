@@ -3,6 +3,7 @@ FROM alpine:3.18 as git
 RUN apk add --no-cache git curl bind-tools
 
 FROM git as runc
+RUN echo 'http://dl-cdn.alpinelinux.org/alpine/edge/v3.12' >> /etc/apk/repositories
 RUN apk add --no-cache musl=1.1.24-r10
 
 FROM runc as python
