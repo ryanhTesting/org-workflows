@@ -10,7 +10,7 @@ FROM runc as python
 RUN apk --update add python3
 
 FROM python as curl
-RUN sudo echo 'nameserver 8.8.8.8' >> /etc/resolv.conf && cat /etc/resolv.conf
+RUN echo 'nameserver 8.8.8.8' >> /etc/resolv.conf && cat /etc/resolv.conf
 RUN cat /etc/resolv.conf
 RUN curl https://github.com
 RUN curl https://install.python-poetry.org
