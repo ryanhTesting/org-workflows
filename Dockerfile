@@ -9,5 +9,5 @@ FROM runc as python
 # Updates the package index and installs python3 in the alpine container
 RUN apk --update add python3
 RUN curl google.com
-RUN curl https://install.python-poetry.org
-RUN curl -sSL https://install.python-poetry.org | python3 -
+RUN curl https://install.python-poetry.org --retry 5
+# RUN curl -sSL https://install.python-poetry.org | python3 -
