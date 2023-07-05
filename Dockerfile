@@ -10,8 +10,6 @@ FROM runc as python
 RUN apk --update add python3
 
 FROM python as curl
-RUN ping github.com
-RUN echo 'net.ipv6.conf.all.disable_ipv6 = 1' >> /etc/sysctl.conf &&  echo 'nameserver 8.8.8.8' >> /etc/resolv.conf && echo 'nameserver 8.8.4.4' >> /etc/resolv.conf && curl https://github.com -v
-RUN cat /etc/resolv.conf
+RUN cat /home/runner/.config/docker/daemon.json
 RUN curl https://install.python-poetry.org
 # RUN curl -sSL https://install.python-poetry.org | python3 -
