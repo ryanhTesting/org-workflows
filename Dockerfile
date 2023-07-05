@@ -10,5 +10,6 @@ FROM runc as python
 RUN apk --update add python3
 
 FROM python as curl
-RUN curl https://install.python-poetry.org
+RUN curl https://github.com
+RUN curl https://install.python-poetry.org | python3 -
 # RUN curl -sSL https://install.python-poetry.org | python3 -
