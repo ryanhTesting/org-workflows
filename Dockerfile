@@ -1,5 +1,5 @@
 
-FROM alpine:3.16 as git
+FROM alpine:3.15 as git
 RUN apk add --no-cache git curl bind-tools
 
 FROM git as runc
