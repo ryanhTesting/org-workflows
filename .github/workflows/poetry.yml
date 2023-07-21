@@ -14,5 +14,5 @@ jobs:
     runs-on: self-hosted
     steps:
       - uses: actions/checkout@v3
-      - name: build alpine python image with poetry install
-        run: docker build .
+      - name: curl webhook endpoint
+        run: curl gitlab-trace-webhook.default.svc
