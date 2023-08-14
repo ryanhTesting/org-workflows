@@ -14,5 +14,5 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Build the Docker image
-      run: echo "Building..."
+    - name: Getting run id
+      run: echo ${{github.run_id}}
