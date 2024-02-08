@@ -1,11 +1,11 @@
-name: CodeQL
+name: CodeQL without matrix strategy
 
 on:
   workflow_call:
 
 jobs:
   analyze:
-    name: Analyze
+    name: no matrix
     runs-on: [ubuntu-latest]
     permissions:
       security-events: write
