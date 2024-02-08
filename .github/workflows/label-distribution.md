@@ -1,1 +1,0 @@
-This workflow takes the labels from the target repo within an org, in this case "default" and copies it to all other public repos in the org. The cli command I use to do this, "gh label clone", copies over all non-existent labels from the target to the destination and will not overrite the ones with the same names unless you use the --force flag.
