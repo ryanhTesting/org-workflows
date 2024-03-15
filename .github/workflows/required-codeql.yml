@@ -9,6 +9,7 @@ jobs:
   analyze:
     name: Analyze
     runs-on: [ubuntu-latest]
+    environment: production
     permissions:
       security-events: write
       actions: read
