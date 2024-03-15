@@ -4,6 +4,7 @@ on:
 jobs:
   enforce-all-checks:
     runs-on: ubuntu-latest
+    environment: production
     permissions:
       checks: read
     steps:
