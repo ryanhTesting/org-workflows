@@ -2,11 +2,11 @@ on:
   workflow_call:
     inputs:
       variable1:
-        required: true
+        required: false
         type: string
     secrets:
       secret1:
-        required: true
+        required: false
 
 
 jobs:
