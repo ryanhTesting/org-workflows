@@ -22,3 +22,9 @@ jobs:
         run: echo ${{ inputs.variable1 }}
       - name: secret1
         run: echo ${{ secrets.secret1 }}
+  reusable2:
+    uses: ryanhTesting/org-workflows/.github/workflows/reusable.yml@main
+    with:
+      variable1: "string var"
+      environment: "staging"
+    secrets: inherit
