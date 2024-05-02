@@ -1,0 +1,24 @@
+on:
+  workflow_call:
+    inputs:
+      variable1:
+        required: false
+        type: string
+      environment:
+        required: false
+        type: string
+    secrets:
+      secret1:
+        required: false
+      
+
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.environment }}
+    steps:
+      - name: variable1
+        run: echo ${{ inputs.variable1 }}
+      - name: secret1
+        run: echo ${{ secrets.secret1 }}
