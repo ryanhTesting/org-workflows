@@ -27,4 +27,3 @@ jobs:
     with:
       variable1: "string var"
       environment: "staging"
-    secrets: inherit
